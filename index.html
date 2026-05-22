@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Computer Engineering Student</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADING SCREEN
+  ============================================================ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-bracket">&lt;</span>
+        <span class="loader-name">CE</span>
+        <span class="loader-bracket">/&gt;</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <p class="loader-text">Initializing...</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+  ============================================================ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <span class="bracket">&lt;</span>Dev<span class="bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero"    class="nav-link" data-section="hero">Home</a></li>
+      <li><a href="#about"   class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills"  class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects"class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <!-- Theme toggle -->
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <i class="fas fa-sun" id="theme-icon"></i>
+    </button>
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero">
+    <!-- Particle canvas background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="hero-content">
+      <!-- Profile picture -->
+      <div class="hero-img-wrap reveal-left">
+        <div class="hero-img-ring"></div>
+        <img
+          src="https://placehold.co/340x340/0a0f1a/39d0ff?text=Your+Photo"
+          alt="Profile photo"
+          class="hero-img"
+          id="profile-img"
+        />
+        <div class="hero-img-badge">
+          <i class="fas fa-microchip"></i> CE Student
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="hero-text reveal-right">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Your Name</h1>
+        <!-- Typed tagline -->
+        <p class="hero-tagline">
+          <span class="typed-prefix">I </span>
+          <span id="typed-text" class="typed-text"></span>
+          <span class="typed-cursor">|</span>
+        </p>
+        <p class="hero-desc">
+          A passionate Computer Engineering student who builds circuits, writes
+          code, and bridges hardware with software to create meaningful technology.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> View Portfolio
+          </a>
+          <a href="cv_placeholder.pdf" download class="btn btn-outline">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+        </div>
+        <!-- Social links -->
+        <div class="hero-socials">
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span class="scroll-dot"></span>
+    </a>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 01</span>
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: detailed intro -->
+        <div class="about-text reveal-left">
+          <p class="about-intro">
+            Hi! I'm a <strong>Computer Engineering student</strong> with a deep love
+            for both hardware and software. I thrive at the intersection of embedded
+            systems and modern web technologies — where logic gates meet APIs.
+          </p>
+          <p>
+            Whether I'm designing a PCB, writing low-level firmware in C++, or crafting
+            a responsive web application, I approach every project with curiosity and
+            precision. I believe great engineers don't just write code — they
+            <em>architect solutions</em>.
+          </p>
+          <p>
+            Outside the lab, you'll find me experimenting with Arduino projects,
+            contributing to open-source, or exploring the latest in AI and IoT.
+          </p>
+
+          <!-- Stats counters -->
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num" data-target="12">0</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="5">0</span>
+              <span class="stat-label">Languages</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="3">0</span>
+              <span class="stat-label">Years Coding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: info cards -->
+        <div class="about-cards reveal-right">
+          <!-- Education card -->
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="info-card-body">
+              <h3>Education</h3>
+              <p class="info-card-title">B.S. Computer Engineering</p>
+              <p class="info-card-sub">University of Your Choice &bull; 2022–2026</p>
+              <p class="info-card-detail">
+                Relevant courses: Digital Systems, Microcontrollers, Data Structures,
+                Computer Networks, Operating Systems, VLSI Design.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interests card -->
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fas fa-brain"></i></div>
+            <div class="info-card-body">
+              <h3>Interests</h3>
+              <div class="tag-cloud">
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">IoT</span>
+                <span class="tag">Web Dev</span>
+                <span class="tag">Networking</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">AI / ML</span>
+                <span class="tag">Open Source</span>
+                <span class="tag">Robotics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Currently card -->
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fas fa-terminal"></i></div>
+            <div class="info-card-body">
+              <h3>Currently</h3>
+              <ul class="currently-list">
+                <li><i class="fas fa-circle-dot"></i> Building an IoT home automation system</li>
+                <li><i class="fas fa-circle-dot"></i> Learning React &amp; Node.js</li>
+                <li><i class="fas fa-circle-dot"></i> Open to internship opportunities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS / LANGUAGE PROFICIENCY SECTION
+  ============================================================ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 02</span>
+        <h2>Skills &amp; Languages</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Programming languages: animated progress bars -->
+        <div class="skills-col reveal-left">
+          <h3 class="skills-col-title"><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skill-bars">
+
+            <div class="skill-bar-item" data-level="85">
+              <div class="skill-bar-header">
+                <span class="skill-icon"><i class="fab fa-cuttlefish"></i> C / C++</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+
+            <div class="skill-bar-item" data-level="78">
+              <div class="skill-bar-header">
+                <span class="skill-icon"><i class="fab fa-java"></i> Java</span>
+                <span class="skill-percent">78%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+
+            <div class="skill-bar-item" data-level="72">
+              <div class="skill-bar-header">
+                <span class="skill-icon"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-percent">72%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+
+            <div class="skill-bar-item" data-level="80">
+              <div class="skill-bar-header">
+                <span class="skill-icon"><i class="fab fa-html5"></i> HTML / CSS / JS</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+
+            <div class="skill-bar-item" data-level="70">
+              <div class="skill-bar-header">
+                <span class="skill-icon"><i class="fas fa-microchip"></i> Arduino / Embedded</span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+
+            <div class="skill-bar-item" data-level="60">
+              <div class="skill-bar-header">
+                <span class="skill-icon"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill-percent">60%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right column: circular indicators + tools -->
+        <div class="skills-col reveal-right">
+          <h3 class="skills-col-title"><i class="fas fa-comments"></i> Spoken Languages</h3>
+          <div class="circular-skills">
+
+            <div class="circ-item">
+              <svg class="circ-svg" viewBox="0 0 100 100">
+                <circle class="circ-bg" cx="50" cy="50" r="42"/>
+                <circle class="circ-fg" cx="50" cy="50" r="42" data-pct="95"
+                  stroke-dasharray="263.9" stroke-dashoffset="263.9"/>
+              </svg>
+              <div class="circ-label">
+                <span class="circ-val">95%</span>
+                <span class="circ-name">Filipino</span>
+              </div>
+            </div>
+
+            <div class="circ-item">
+              <svg class="circ-svg" viewBox="0 0 100 100">
+                <circle class="circ-bg" cx="50" cy="50" r="42"/>
+                <circle class="circ-fg" cx="50" cy="50" r="42" data-pct="80"
+                  stroke-dasharray="263.9" stroke-dashoffset="263.9"/>
+              </svg>
+              <div class="circ-label">
+                <span class="circ-val">80%</span>
+                <span class="circ-name">English</span>
+              </div>
+            </div>
+
+            <div class="circ-item">
+              <svg class="circ-svg" viewBox="0 0 100 100">
+                <circle class="circ-bg" cx="50" cy="50" r="42"/>
+                <circle class="circ-fg" cx="50" cy="50" r="42" data-pct="40"
+                  stroke-dasharray="263.9" stroke-dashoffset="263.9"/>
+              </svg>
+              <div class="circ-label">
+                <span class="circ-val">40%</span>
+                <span class="circ-name">Cebuano</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Tools & Technologies -->
+          <h3 class="skills-col-title" style="margin-top:2.5rem"><i class="fas fa-wrench"></i> Tools &amp; Tech</h3>
+          <div class="tools-grid">
+            <div class="tool-chip"><i class="fab fa-git-alt"></i> Git</div>
+            <div class="tool-chip"><i class="fab fa-linux"></i> Linux</div>
+            <div class="tool-chip"><i class="fas fa-network-wired"></i> Cisco</div>
+            <div class="tool-chip"><i class="fab fa-docker"></i> Docker</div>
+            <div class="tool-chip"><i class="fas fa-bolt"></i> Arduino IDE</div>
+            <div class="tool-chip"><i class="fas fa-layer-group"></i> KiCad</div>
+            <div class="tool-chip"><i class="fab fa-react"></i> React</div>
+            <div class="tool-chip"><i class="fab fa-node-js"></i> Node.js</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS SECTION
+  ============================================================ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 03</span>
+        <h2>Projects</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="project-filters reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="embedded">Embedded</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="software">Software</button>
+      </div>
+
+      <!-- Projects grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project Card 1 -->
+        <div class="project-card reveal-up" data-category="embedded"
+          data-title="Smart Home Automation"
+          data-desc="An IoT-based home automation system using ESP32, MQTT protocol, and a React web dashboard. Controls lighting, temperature, and security remotely via smartphone."
+          data-tech="ESP32 · MQTT · React · Node.js · Arduino"
+          data-img="https://placehold.co/800x500/0a0f1a/39d0ff?text=Smart+Home+IoT"
+          data-link="https://github.com/">
+          <div class="project-img-wrap">
+            <img src="https://placehold.co/600x380/0d1526/39d0ff?text=Smart+Home+IoT" alt="Smart Home Automation" loading="lazy"/>
+            <div class="project-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Smart Home Automation</h3>
+            <div class="project-tags">
+              <span>ESP32</span><span>MQTT</span><span>React</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card reveal-up" data-category="web"
+          data-title="Student Portal System"
+          data-desc="A full-stack web application for a university student portal. Features include grade viewing, enrollment, scheduling, and announcements. Built with PHP/MySQL backend."
+          data-tech="HTML · CSS · JavaScript · PHP · MySQL"
+          data-img="https://placehold.co/800x500/0a0f1a/a855f7?text=Student+Portal"
+          data-link="https://github.com/">
+          <div class="project-img-wrap">
+            <img src="https://placehold.co/600x380/0d1526/a855f7?text=Student+Portal" alt="Student Portal System" loading="lazy"/>
+            <div class="project-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Student Portal System</h3>
+            <div class="project-tags">
+              <span>PHP</span><span>MySQL</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card reveal-up" data-category="software"
+          data-title="Compiler Design (Mini C)"
+          data-desc="A simplified C compiler built in Java that performs lexical analysis, parsing, semantic analysis, and generates intermediate code. Created as an academic project."
+          data-tech="Java · Compiler Theory · OOP"
+          data-img="https://placehold.co/800x500/0a0f1a/22d3ee?text=Mini+C+Compiler"
+          data-link="https://github.com/">
+          <div class="project-img-wrap">
+            <img src="https://placehold.co/600x380/0d1526/22d3ee?text=Mini+C+Compiler" alt="Mini C Compiler" loading="lazy"/>
+            <div class="project-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Mini C Compiler</h3>
+            <div class="project-tags">
+              <span>Java</span><span>Compilers</span><span>OOP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-card reveal-up" data-category="embedded"
+          data-title="Line-Following Robot"
+          data-desc="An autonomous line-following robot using Arduino Uno with PID control, infrared sensors, and L298N motor drivers. Competed in the university's robotics event."
+          data-tech="Arduino · C++ · PID · IR Sensors · L298N"
+          data-img="https://placehold.co/800x500/0a0f1a/f59e0b?text=Line+Following+Robot"
+          data-link="https://github.com/">
+          <div class="project-img-wrap">
+            <img src="https://placehold.co/600x380/0d1526/f59e0b?text=Line+Following+Robot" alt="Line-Following Robot" loading="lazy"/>
+            <div class="project-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Line-Following Robot</h3>
+            <div class="project-tags">
+              <span>Arduino</span><span>C++</span><span>PID</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 5 -->
+        <div class="project-card reveal-up" data-category="web"
+          data-title="Weather Dashboard"
+          data-desc="A weather dashboard SPA that fetches real-time data from OpenWeatherMap API. Features animated weather icons, 5-day forecast, and geolocation detection."
+          data-tech="HTML · CSS · JavaScript · REST API"
+          data-img="https://placehold.co/800x500/0a0f1a/34d399?text=Weather+Dashboard"
+          data-link="https://github.com/">
+          <div class="project-img-wrap">
+            <img src="https://placehold.co/600x380/0d1526/34d399?text=Weather+Dashboard" alt="Weather Dashboard" loading="lazy"/>
+            <div class="project-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Weather Dashboard</h3>
+            <div class="project-tags">
+              <span>API</span><span>JS</span><span>CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 6 -->
+        <div class="project-card reveal-up" data-category="software"
+          data-title="Network Packet Analyzer"
+          data-desc="A Python-based network packet analyzer using Scapy library. Captures live traffic, decodes protocols (TCP/UDP/ICMP), and visualizes packet statistics."
+          data-tech="Python · Scapy · Networking · Matplotlib"
+          data-img="https://placehold.co/800x500/0a0f1a/f43f5e?text=Packet+Analyzer"
+          data-link="https://github.com/">
+          <div class="project-img-wrap">
+            <img src="https://placehold.co/600x380/0d1526/f43f5e?text=Packet+Analyzer" alt="Network Packet Analyzer" loading="lazy"/>
+            <div class="project-overlay">
+              <i class="fas fa-expand-alt"></i>
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Network Packet Analyzer</h3>
+            <div class="project-tags">
+              <span>Python</span><span>Scapy</span><span>Networks</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT LIGHTBOX MODAL
+  ============================================================ -->
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-label="Project details">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <img id="modal-img" src="" alt="" class="modal-img" />
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <div class="modal-tech-wrap">
+          <span class="modal-tech-label"><i class="fas fa-layer-group"></i> Technologies:</span>
+          <span id="modal-tech"></span>
+        </div>
+        <a href="#" id="modal-link" target="_blank" rel="noopener" class="btn btn-primary modal-btn">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">// 04</span>
+        <h2>Contact Me</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: contact info -->
+        <div class="contact-info reveal-left">
+          <p class="contact-intro">
+            Have a project in mind, an internship opportunity, or just want to say hi?
+            Feel free to reach out. I'm always open to collaborations and new challenges.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:yourname@email.com" class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <span class="contact-val">yourname@email.com</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com/" target="_blank" rel="noopener" class="contact-item">
+                <div class="contact-icon"><i class="fab fa-facebook"></i></div>
+                <div>
+                  <span class="contact-label">Facebook</span>
+                  <span class="contact-val">facebook.com/yourprofile</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/" target="_blank" rel="noopener" class="contact-item">
+                <div class="contact-icon"><i class="fab fa-github"></i></div>
+                <div>
+                  <span class="contact-label">GitHub</span>
+                  <span class="contact-val">github.com/yourusername</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-item">
+                <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                <div>
+                  <span class="contact-label">LinkedIn</span>
+                  <span class="contact-val">linkedin.com/in/yourprofile</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: contact form -->
+        <div class="contact-form-wrap reveal-right">
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" name="name" placeholder="Your full name" autocomplete="name" />
+              <span class="form-error" id="err-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" placeholder="your@email.com" autocomplete="email" />
+              <span class="form-error" id="err-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" name="message" rows="5" placeholder="Tell me about your project or opportunity…"></textarea>
+              <span class="form-error" id="err-message"></span>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <p class="form-success" id="form-success">
+              <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Your Name. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:yourname@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="footer-made">
+        Built with <i class="fas fa-heart" style="color:var(--accent)"></i> using HTML, CSS &amp; JS
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BACK-TO-TOP BUTTON
+  ============================================================ -->
+  <button id="back-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
