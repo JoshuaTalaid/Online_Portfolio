@@ -347,16 +347,35 @@ const modalTech   = document.getElementById('modal-tech');
 const modalLink   = document.getElementById('modal-link');
 const modalClose  = document.getElementById('modal-close');
 const modalBackdrop = document.getElementById('modal-backdrop');
+const modalVideo = document.getElementById('modal-video');
 
-// Open modal on project card click
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => {
-    modalImg.src       = card.dataset.img;
-    modalImg.alt       = card.dataset.title;
     modalTitle.textContent = card.dataset.title;
     modalDesc.textContent  = card.dataset.desc;
     modalTech.textContent  = card.dataset.tech;
-    modalLink.href     = card.dataset.link || '#';
+
+    // Show video iframe OR image depending on data-video
+    if (card.dataset.video) {
+      modalVideo.src          = card.dataset.video;
+      modalVideo.style.display = 'block';
+      modalImg.style.display   = 'none';
+    } else {
+      modalImg.src             = card.dataset.img;
+      modalImg.alt             = card.dataset.title;
+      modalImg.style.display   = 'block';
+      modalVideo.style.display = 'none';
+      modalVideo.src           = ''; // clear any previous video
+    }
+
+    // Show or hide GitHub button
+    if (card.dataset.link) {
+      modalLink.href           = card.dataset.link;
+      modalLink.style.display  = 'inline-flex';
+    } else {
+      modalLink.style.display  = 'none';
+    }
+
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   });
@@ -365,6 +384,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 function closeModal() {
   modal.classList.remove('open');
   document.body.style.overflow = '';
+  modalVideo.src = ''; // stops the video from playing in background
 }
 
 modalClose.addEventListener('click', closeModal);
@@ -436,18 +456,31 @@ contactForm.addEventListener('submit', e => {
   }
 
   if (valid) {
-    // Simulate a form submit (replace with actual backend/API call)
     const submitBtn = contactForm.querySelector('.form-submit');
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
 
-    setTimeout(() => {
-      contactForm.reset();
+    const formData = new FormData(contactForm);
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        contactForm.reset();
+        formSuccess.classList.add('show');
+        setTimeout(() => formSuccess.classList.remove('show'), 5000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(() => alert('Network error. Please try again.'))
+    .finally(() => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-      formSuccess.classList.add('show');
-      setTimeout(() => formSuccess.classList.remove('show'), 5000);
-    }, 1500);
+    });
   }
 });
 
