@@ -352,7 +352,7 @@ const modalVideo = document.getElementById('modal-video');
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => {
     modalTitle.textContent = card.dataset.title;
-    modalDesc.textContent  = card.dataset.desc;
+    modalDesc.innerHTML = card.dataset.desc;
     modalTech.textContent  = card.dataset.tech;
 
     // Show video iframe OR image depending on data-video

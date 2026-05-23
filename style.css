@@ -870,6 +870,15 @@ body.light #navbar.scrolled {
   line-height: 1.75;
   margin-bottom: 1.2rem;
 }
+.modal-body p a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+.modal-body p a:hover {
+  opacity: 0.75;
+}
 .modal-tech-wrap {
   display: flex;
   align-items: center;
